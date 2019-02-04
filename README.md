@@ -58,11 +58,7 @@ $ java -jar shadowsocks-fat-1.0.0.jar config.json
 
 4 运行 java
 
-操作简单，不赘述
-
-浏览器： Chrome + SwitchyOmega 
-
-SwitchyOmega 选择 socks5 ，端口选择 1080 （默认）即可
+5 Chrome + SwitchyOmega
 
 
 Linux 相关
