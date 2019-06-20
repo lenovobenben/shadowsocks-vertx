@@ -1,4 +1,4 @@
-Shadowsocks-Vertx
+shadowsocks-vertx
 ================
 
 [![License](http://img.shields.io/:license-apache-blue.svg?style=flat-square)](http://www.apache.org/licenses/LICENSE-2.0.html)
@@ -6,7 +6,7 @@ Shadowsocks-Vertx
 简介
 ===========
 
-Shadowsocks-Vertx 是一个 socks5 代理，基于 Java Vert.x 
+shadowsocks-vertx 是一个 socks5 代理，基于 Java Vert.x 
 
 Features
 ===========
