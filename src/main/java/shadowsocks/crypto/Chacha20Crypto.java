@@ -12,8 +12,6 @@ import java.io.ByteArrayOutputStream;
 public class Chacha20Crypto extends BaseCrypto {
 
 
-    private final static int IV_LENGTH = GlobalConfig.get().getIvLen();
-
     private final static int LEN = 8;
 
     private final static int KEY_LENGTH = 32;
@@ -24,7 +22,7 @@ public class Chacha20Crypto extends BaseCrypto {
 
     @Override
     public int getIVLength() {
-        return IV_LENGTH;
+        return GlobalConfig.get().getIvLen();
     }
 
     @Override
@@ -37,7 +35,7 @@ public class Chacha20Crypto extends BaseCrypto {
     {
         StreamCipher c = new ChaChaEngine();
         byte[] newIv = new byte[LEN];
-        if(IV_LENGTH == LEN) {// 兼容原生
+        if(getIVLength() == LEN) {// 兼容原生
             newIv = iv;
         } else {// 计算 iv 的 md5 ，取前 8 byte 做 newIv
             byte[] md5 = Utils.md5(iv);

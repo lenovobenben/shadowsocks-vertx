@@ -187,7 +187,7 @@ public class GlobalConfig{
             int size = reader.read(data, 0, data.length);
             if (size < 0)
                 return null;
-            return new String(data);
+            return new String(data).trim();
         }catch(IOException e){
             log.error("Read config file " + name + " error.", e);
             return null;

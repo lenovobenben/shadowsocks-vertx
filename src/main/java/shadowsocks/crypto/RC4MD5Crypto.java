@@ -9,8 +9,6 @@ import java.io.ByteArrayOutputStream;
 
 public class RC4MD5Crypto extends BaseCrypto {
 
-    private final static int IV_LENGTH = GlobalConfig.get().getIvLen();
-
     private final static int KEY_LENGTH = 16;
 
     public RC4MD5Crypto(String name, String password) throws CryptoException {
@@ -19,7 +17,7 @@ public class RC4MD5Crypto extends BaseCrypto {
 
     @Override
     public int getIVLength() {
-        return IV_LENGTH;
+        return GlobalConfig.get().getIvLen();
     }
 
     @Override
@@ -31,9 +29,9 @@ public class RC4MD5Crypto extends BaseCrypto {
     protected StreamCipher createCipher(byte[] iv, boolean encrypt) throws CryptoException
     {
         StreamCipher c = new RC4Engine();
-        byte[] data = new byte[KEY_LENGTH + IV_LENGTH];
+        byte[] data = new byte[KEY_LENGTH + getIVLength()];
         System.arraycopy(mKey,0,data,0,KEY_LENGTH);
-        System.arraycopy(iv,0,data,KEY_LENGTH,IV_LENGTH);
+        System.arraycopy(iv,0,data,KEY_LENGTH,getIVLength());
 
         byte[] hash = Utils.md5(data);
 

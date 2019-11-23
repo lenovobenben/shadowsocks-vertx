@@ -12,8 +12,6 @@ import java.io.ByteArrayOutputStream;
 
 public class AESCrypto extends BaseCrypto {
 
-    private final static int IV_LENGTH = GlobalConfig.get().getIvLen();
-
     private final static int LEN = 16;
 
     private final static int KEY_LENGTH = 32;
@@ -24,7 +22,7 @@ public class AESCrypto extends BaseCrypto {
 
     @Override
     public int getIVLength() {
-        return IV_LENGTH;
+        return GlobalConfig.get().getIvLen();
     }
 
     @Override
@@ -43,7 +41,7 @@ public class AESCrypto extends BaseCrypto {
     {
         StreamBlockCipher c = getCipher();
         byte[] newIv;
-        if (IV_LENGTH==LEN) {// 兼容原生
+        if (getIVLength()==LEN) {// 兼容原生
             newIv = iv;
         } else {// 做 md5
             newIv = Utils.md5(iv);
