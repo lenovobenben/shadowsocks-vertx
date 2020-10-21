@@ -47,7 +47,7 @@ $ wget https://raw.githubusercontent.com/lenovobenben/shadowsocks-vertx/master/s
 ```
 $ java -jar shadowsocks-fat-1.0.0.jar config.json
 ```
-启动 java 时，如果为纯 ipv4 ，则**必须**添加  -Djava.net.preferIPv4Stack=true ；如果为双栈则**建议**添加 -Djava.net.preferIPv6Addresses=true
+启动 java 时，如果为纯 ipv4 ，则**必须**添加  -Djava.net.preferIPv4Stack=true 
 
 ### 客户端（以 Windows 为例）
 1 安装JDK8
