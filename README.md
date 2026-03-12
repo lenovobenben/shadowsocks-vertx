@@ -70,9 +70,4 @@ Linux 相关
 
 加入开机自启动
 
-捐赠
-===========
 
-BTC  3DvfutCnS65MVogMpnmwjLgBePFNq483Lm
-
-ETH  0xaE16C6511Ac8a6Eb6e3e588DBF5BDC770FA69c36
